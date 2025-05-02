@@ -17,4 +17,18 @@ section h1 {
 section p {
   font-size: clamp(1rem, 2vw, 3rem);
   color: #333;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #333;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #f7edf0;
+  border-radius: 20px;
+  border: 3px solid #333;
 }/*# sourceMappingURL=main.css.map */
