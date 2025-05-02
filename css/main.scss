@@ -1,13 +1,13 @@
 body {
     margin: 0;
-    font-family: 'PP Mori', sans-serif;
+    font-family: 'Sofia', sans-serif;
 }
 
 section {
     display: grid;
     place-content: center;
     height: 100vh;
-    background-color: #c0a811;
+    background-color: #f7edf0;
     padding: 0 clamp(4rem, 12vw, 20rem);
 
     h1 {
@@ -20,7 +20,7 @@ section {
         color: #333;    
     }
 
-    &:nth-of-type(2) {
+    p:nth-of-type(2) {
         background-color: #333;
         color: #c0a811;
     }

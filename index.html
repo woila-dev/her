@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Scroll Effect</title>
+    <title>You</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
 <body>
@@ -13,51 +14,83 @@
     </section>
 
     <section>
-        <p>
-            I am writing this while you are studying for your practical tomorrow morning. Over the months, I have realized that
-            talking to you is honestly the best part of my day. Before I met you, I didn't think I would
-            look forward to sharing every little detail of my day with someone.
+        <p class="reveal-type">
+            I am writing this while you're studying for your practical tomorrow morning. I just wanted to
+            tell how much you mean to me. Over the past few months, I have come to 
+            realize that talking to you is honestly the best part of my day. Before I met you, I wasn't the kind of person
+            who would look forward to sharing every little detail of my day with someone. But with you, it feels different.
         </p>
     </section>
 
     <section>
-        <p>
-            Even the word "sure" reminds me of you now.
+        <p class="reveal-type">
+            What I love is how we can talk about literally anything - whether it is cracking up over Ganji Chudail or discussing
+    the possible applications of Kaala Jadu ( because clearly, that's important stuff ). It just feels right with you.
+    Even like right now, when we're sitting in silence doing our own stuff, it just feels comfortable and relaxing.
         </p>
     </section>
 
     <section>
-        <p>
-            Every single day, I find myself falling a little more for you. It's not just the big things - it's the
+        <p class="reveal-type">
+            And you know what? Even the word "sure" reminds me of you now. Every single day, I find myself falling a little more for you. It's not just the big things - it's the
     little moments too. I catch myself wondering how someone can be so insanely smart and beautiful, but still
-    have a great sense of humour. And yes, I still get butterflies when I see you.
+    have a great sense of humour. I won't lie, I do get butterflies every time I see you.
         </p>
     </section>
 
 
     <section>
-        <p>
-            I want to dance with you. I want to smash stuff in a rage room with you. I want to go try lobster with you. I want 
-    to do so much with you. But most of all, I want to catch the sunset with you - just taking it all in. 
+        <p class="reveal-type">
+            There’s so much I want to do along with you. I want to dance with you. I want to smash things in a rage room with you.
+            I want to go try lobster with you. But most of all, I want to catch the sunset with you - just taking it all in.
+            <strong>So, Bhavika...</strong> 
         </p>
     </section>
 
     <section>
-        <p>
-            I want to dance with you. I want to smash stuff in a rage room with you. I want to go try lobster with you. I want 
-    to do so much with you. But most of all, I want to catch the sunset with you - just taking it all in. 
-        </p>
-    </section>
-
-    <section>
-        <p>
-            So, Bhavika...
-        </p>
         <h1>
             Can I be yours?
         </h1>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+
+    <script>
+
+        gsap.registerPlugin(ScrollTrigger)
+        const splitTypes = document.querySelectorAll('.reveal-type')
+
+        splitTypes.forEach((splitType) => {
+            const split = new SplitType(splitType, { types: 'words' })
+            const words = split.words
+            gsap.set(words, { y: '100%', opacity: 0 })
+            gsap.to(words, {
+                scrollTrigger: {
+                    trigger: splitType,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true,
+                },
+                y: '0%',
+                opacity: 1,
+                stagger: 0.05,
+            })
+        })
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
+    
     
     
     <!-- I love how we can talk about literally anything - whether it is cracking up over Ganji Chudail or discussing
